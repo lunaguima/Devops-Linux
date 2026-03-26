@@ -1,0 +1,43 @@
+    1  pwd
+    2  mkdir dimdim_bank
+    3  cd dimdim_bank
+    4  ls -l
+    5  mkdir clientes transacoes relatorios backup logs
+    6  ls -l
+    7  cd clientes
+    8  touch cliente_001_joao_silva.txt cliente_002_maria_santos.txt cliente_003_pedro_oliveira.txt
+    9  cd ../transacoes
+   10  touch transacoes_janeiro_2025.txt transacoes_fevereiro_2025.txt
+   11  echo "João Silva - CPF: 123.456.789-00 - Conta: 12345-6 - Saldo: R$ 1.500,00" > ../clientes/cliente_001_joao_silva.txt 
+   12  echo "Maria Santos - CPF: 987.654.321-00 - Conta: 98765-4 - Saldo: R$ 2.800,00" > ../clientes/cliente_002_maria_santos.txt
+   13  echo "Pedro Oliveira - CPF: 456.789.123-00 - Conta: 45678-9 - Saldo: R$ 950,00" > ../clientes/cliente_003_pedro_oliveira.txt
+   14  echo "01/01/2025 - Transferência - João Silva -> Maria Santos - R$ 200,00" > transacoes_janeiro_2025.txt
+   15  echo "02/01/2025 - Depósito - Pedro Oliveira - R$ 500,00" >> transacoes_janeiro_2025.txt
+   16  echo "03/01/2025 - Saque - João Silva - R$ 100,00" >> transacoes_janeiro_2025.txt
+   17  echo "15/02/2025 - PIX - Maria Santos -> Pedro Oliveira - R$ 150,00" > transacoes_fevereiro_2025.txt
+   18  cat transacoes_janeiro_2025.txt
+   19  cat ../clientes/cliente_001_joao_silva.txt
+   20  cp transacoes_janeiro_2025.txt ../backup/
+   21  cp ../clientes/cliente_001_joao_silva.txt ../backup/backup_cliente_001.txt
+   22  cd ../relatorios
+   23  mv ../transacoes/transacoes_fevereiro_2025.txt relatorio_mensal_fevereiro.txt
+   24  cd ../transações
+   25  cd ../transacoes
+   26  echo "05/01/2025 - Pagamento de Conta - João Silva - R$ 80,00" >> transacoes_janeiro_2025.txt
+   27  echo "08/01/2025 - Transferência - Pedro Oliveira -> João Silva - R$ 300,00" >> transacoes_janeiro_2025.txt
+   28  echo "12/01/2025 - Depósito - Maria Santos - R$ 1.200,00" >> transacoes_janeiro_2025.txt
+   29  echo "18/01/2025 - Saque - Pedro Oliveira - R$ 200,00" >> transacoes_janeiro_2025.txt
+   30  echo "22/01/2025 - PIX - João Silva -> Maria Santos - R$ 450,00" >> transacoes_janeiro_2025.txt
+   31  echo "25/01/2025 - Pagamento de Boleto - Maria Santos - R$ 320,00" >> transacoes_janeiro_2025.txt
+   32  echo "28/01/2025 - Transferência - Maria Santos -> Pedro Oliveira - R$ 180,00" >> transacoes_janeiro_2025.txt
+   33  tail -10 transacoes_janeiro_2025.txt
+   34  cd ~/dimdim_bank
+   35  ls -la *
+   36  ls -l clientes
+   37  ls -l transacoes
+   38  ls -l relatorios
+   39  ls -l backup
+   40  ls -l logs
+   41  nano README.md
+   42  cat README.md
+   43  history > comandos_utilizados.txt
