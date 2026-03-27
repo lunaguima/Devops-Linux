@@ -1,0 +1,78 @@
+ 1  sudo yum check-update
+    2  sudo yum install tree
+    3  pwd
+    4  ls
+    5  mkdir Projects
+    6  ls
+    7  cd Projects
+    8  cd ..
+    9  mkdir Backup
+   10  cd Projects
+   11  mkdir Release
+   12  tree
+   13  sudo yum install tree
+   14  tree ~
+   15  rmdir Release
+   16  ls
+   17  mkdir Release
+   18  ls
+   19  cd ~
+   20  touch file1
+   21  touch file2 file3 file4
+   22  ls
+   23  tree
+   24  cd ~
+   25  cp file1 Projects/Release
+   26  tree
+   27  cp file1 Projects/Release/file1b
+   28  tree
+   29  cd ~
+   30  cp /home/opc/file1
+   31  cp /home/opc/file1
+   32  /home/opc/Projects/Release
+   33  rm Release
+   34  rm -r Release
+   35  rm --help
+   36  cd ~/Projects
+   37  mkdir Release
+   38  cd ~
+   39  touch file4b file4c
+   40  ls file4?
+   41  ls ?ile1
+   42  ls file*
+   43  ls *ile*
+   44  mv file4* Backup
+   45  mv file* Projects
+   46  mv file1 file1a
+   47  ls -a
+   48  sudo yum install man man-pages
+   49  man cal
+   50  man –k password
+   51  cal > test
+   52  cat test
+   53  ls /etc > test
+   54  more test
+   55  man ls | head -10
+   56  cat test | tail -5
+   57  ls -l /etc > test
+   58  cat test | tr 'a-z' 'A-Z'
+   59  cat test | tr 'aeiou' '*'
+   60  ps -d
+   61  sleep 10
+   62  sleep 100&
+   63  ps
+   64  sleep 1000&
+   65  ##remember pid
+   66  kill <pidnumber>
+   67  nano&
+   68  ps (get id of nano)
+   69  kill <nanoid>
+   70  ps
+   71  ps (get id of nano)
+   72  kill -9 <nanoid>
+   73  ps
+   74  nano&
+   75  fg
+   76  w
+   77  top
+   78  history > historico_de_comandos.txt
