@@ -1,0 +1,132 @@
+    1  git config --global user.name lunaguima
+    2  git config --global user.email luna.dcarvalho05@gmail.com
+    3  git clone https://github.com/lunaguima/linux-devops.git
+    4  cd linux-devops
+    5  git checkout -b "Aulas Linux-Devops"
+    6  git checkout -b "Aulas-Linux-Devops"
+    7  git branch
+    8  pwd
+    9  mkdir dimdim_bank
+   10  cd dimdim_bank
+   11  ls -l
+   12  mkdir clientes transacoes relatorios backup logs
+   13  ls -l
+   14  cd clientes
+   15  touch cliente_001_joao_silva.txt cliente_002_maria_santos.txt cliente_003_pedro_oliveira.txt
+   16  ../transacoes
+   17  cd ../transacoes
+   18  touch transacoes_janeiro_2025.txt transacoes_fevereiro_2025.txt
+   19  echo "João Silva - CPF: 123.456.789-00 - Conta: 12345-6 - Saldo: R$ 1.500,00" > ../clientes/cliente_001_joao_silva.txt
+   20  echo "Maria Santos - CPF: 987.654.321-00 - Conta: 98765-4 - Saldo: R$ 2.800,00" > ../clientes/cliente_002_maria_santos.txt
+   21  echo "Pedro Oliveira - CPF: 456.789.123-00 - Conta: 45678-9 - Saldo: R$ 950,00" > ../clientes/cliente_003_pedro_oliveira.txt
+   22  echo "01/01/2025 - Transferência - João Silva -> Maria Santos - R$ 200,00" > transacoes_janeiro_2025.txt
+   23  echo "02/01/2025 - Depósito - Pedro Oliveira - R$ 500,00" >> transacoes_janeiro_2025.txt
+   24  echo "03/01/2025 - Saque - João Silva - R$ 100,00" >> transacoes_janeiro_2025.txt
+   25  echo "15/02/2025 - PIX - Maria Santos -> Pedro Oliveira - R$ 150,00" > transacoes_fevereiro_2025.txt
+   26  cat transacoes_janeiro_2025.txt
+   27  cat ../clientes/cliente_001_joao_silva.txt
+   28  cp transacoes_janeiro_2025.txt ../backup/
+   29  cp ../clientes/cliente_001_joao_silva.txt ../backup/backup_cliente_001.txt
+   30  cd ../relatorios
+   31  mv ../transacoes/transacoes_fevereiro_2025.txt relatorio_mensal_fevereiro.txt
+   32  cd ../transações
+   33  cd ../transacoes
+   34  echo "05/01/2025 - Pagamento de Conta - João Silva - R$ 80,00" >> transacoes_janeiro_2025.txt 
+   35  echo "08/01/2025 - Transferência - Pedro Oliveira -> João Silva - R$ 300,00" >> transacoes_janeiro_2025.txt 
+   36  echo "12/01/2025 - Depósito - Maria Santos - R$ 1.200,00" >> transacoes_janeiro_2025.txt 
+   37  echo "18/01/2025 - Saque - Pedro Oliveira - R$ 200,00" >> transacoes_janeiro_2025.txt 
+   38  echo "22/01/2025 - PIX - João Silva -> Maria Santos - R$ 450,00" >> transacoes_janeiro_2025.txt 
+   39  echo "25/01/2025 - Pagamento de Boleto - Maria Santos - R$ 320,00" >> transacoes_janeiro_2025.txt 
+   40  echo "28/01/2025 - Transferência - Maria Santos -> Pedro Oliveira - R$ 180,00" >> transacoes_janeiro_2025.txt
+   41  tail -10 transacoes_janeiro_2025.txt
+   42  cd ../backup 
+   43  rm backup_cliente_001.txt
+   44  cd ~/dimdim_bank
+   45  cd ~/linux-devops/dimdim_bank
+   46  ls -la *
+   47  ls -l clientes
+   48  ls -l transacoes
+   49  ls -l relatorios
+   50  ls -l backup
+   51  ls -l logs
+   52  cd ~/dimdim_bank
+   53  cd logs 
+   54  touch sistema_dimdim.log acesso_usuarios.log transacoes_api.log erro_sistema.log
+   55  echo "2025-01-28 09:15:32 [INFO] Sistema DimDim iniciado com sucesso" > sistema_dimdim.log
+   56  echo "2025-01-28 09:16:45 [INFO] Módulo de transações carregado" >> sistema_dimdim.log 
+   57  echo "2025-01-28 09:17:12 [ERROR] Falha na conexão com banco de dados" >> sistema_dimdim.log
+   58  echo "2025-01-28 09:18:00 [INFO] Reconexão com banco estabelecida" >> sistema_dimdim.log 
+   59  echo "2025-01-28 09:20:15 [WARN] Alto volume de transações detectado" >> sistema_dimdim.log
+   60  echo "2025-01-28 08:30:15 LOGIN joao.silva 192.168.1.100 SUCCESS" > acesso_usuarios.log 
+   61  echo "2025-01-28 08:45:22 LOGIN maria.santos 192.168.1.101 SUCCESS" >> acesso_usuarios.log
+   62  echo "2025-01-28 09:12:33 LOGIN pedro.oliveira 192.168.1.102 FAILED" >> acesso_usuarios.log
+   63  echo "2025-01-28 09:13:01 LOGIN pedro.oliveira 192.168.1.102 SUCCESS" >> acesso_usuarios.log 
+   64  echo "2025-01-28 09:45:18 LOGOUT joao.silva 192.168.1.100" >> acesso_usuarios.log
+   65  echo "2025-01-28 10:15:30 API_CALL transfer amount=200.00 from=12345-6 to=98765-4" > transacoes_api.log
+   66  echo "2025-01-28 10:16:45 API_CALL deposit amount=500.00 account=45678-9" >> transacoes_api.log 
+   67  echo "2025-01-28 10:18:22 API_CALL withdrawal amount=100.00 account=12345-6" >> transacoes_api.log 
+   68  echo "2025-01-28 10:25:15 API_CALL pix amount=150.00 from=98765-4 to=45678-9" >> transacoes_api.log
+   69  echo "2025-01-28 09:17:12 [ERROR] Database connection timeout - retrying..." > erro_sistema.log
+   70  echo "2025-01-28 11:30:45 [ERROR] Invalid transaction amount: -50.00" >> erro_sistema.log
+   71  echo "2025-01-28 14:22:18 [ERROR] User authentication failed for CPF 111.222.333-44" >> erro_sistema.log
+   72  cd ~/dimdim_bank
+   73  cd ~/linux-devops/dimdim_bank
+   74  find . -name "*.txt"
+   75  find . -name "*joao*"
+   76  find . -type d
+   77  grep -r "João Silva" .
+   78  grep "ERROR" logs/*.log
+   79  grep "SUCCESS" logs/acesso_usuarios.log
+   80  grep -E "(200|[3-9][0-9]{2}|[0-9]{4})" transacoes/transacoes_janeiro_2025.txt
+   81  grep -c "Transferência" transacoes/transacoes_janeiro_2025.txt
+   82  df -h
+   83  df -h .
+   84  df -hT
+   85  ps
+   86  ps -aux
+   87  ps -aux | grep bash
+   88  top
+   89  cd ~/linux-devops
+   90  history > comandos_atividade.txt
+   91  git add .
+   92  git commit -m "Entrega DimDim Bank e historico de comandos"
+   93  git push origin Aulas-Linux-Devops
+   94  git push Aulas-Linux-Devops
+   95  git push origin Aulas-Linux-Devops
+   96  git push -u origin main
+   97  git checkout Aulas-Linux-Devops
+   98  git remote -v
+   99  git diff
+  100  exit
+  101  sudo apt-get update
+  102  sudo apt-get install tree
+  103  cd ~
+  104  mkdir Business
+  105  cd Business
+  106  mkdir Payrol Accounts Staff
+  107  cd ~/Business
+  108  tree
+  109  touch payrol1 payrol2 payrollastyear stafflist 
+  110  accountsyear1 accountsyear2
+  111  tree
+  112  touch accountsyearl accountsyear2
+  113  cd ~/Business/Payrol
+  114  mkdir Backup
+  115  cd ~/Business
+  116  mv payrol? Payrol 
+  117  mv payrollastyear
+  118  mv payrollastyear Payrol/Backup
+  119  mv stafflist Staff
+  120  mv accountsyear1 Accounts
+  121  mv accountsyearl Accounts
+  122  mv accountsyear2 Accounts
+  123  cd ~/Business/Payrol/Backup
+  124  mv payrollastyear payrolbackup
+  125  cd ~/Business
+  126  ls
+  127  tree ~/Business
+  128  cd ~/Business/Payrol
+  129  touch notes.txt
+  130  cp notes.txt ~/Business/Staff
+  131  cd ~
+  132  history > atividade_lab4.txt
