@@ -1,0 +1,23 @@
+ls /etc
+sudo apt-get update
+sudo apt install xfce4 xfce4-goodies
+vncserver
+vncserver -kill :1
+mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+sudo nano ~/.vnc/xstartup
+sudo chmod 700 ~/.vnc/xstartup
+vncserver :1
+sudo apt-get install firefox
+XAUTHORITY=$HOME/.Xauthority
+export XAUTHORITY
+sudo apt install apache2
+sudo systemctl status apache2
+sudo ufw app list
+sudo ufw app info "Apache Full"
+sudo ufw allow in "Apache Full"
+sudo apt-get install net-tools
+sudo netstat -tulpn | grep LISTEN
+sudo a2enmod ssl
+sudo systemctl restart apache2
+sudo netstat -tulpn | grep LISTEN
+sudo iptables -I INPUT 5 -i ens3 -p tcp -m multiport --dports 80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
