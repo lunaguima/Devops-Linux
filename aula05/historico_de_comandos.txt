@@ -1,0 +1,16 @@
+  1  sudo fallocate -l 1G /swapfile
+    2  sudo chmod 600 /swapfile
+    3  sudo mkswap /swapfile
+    4  sudo swapon /swapfile
+    5  sudo yum install jd
+    6  sudo yum install jdk
+    7  sudo swapon /swapfile
+    8  sudo yum clean all
+    9  sudo yum install -y jdk --nogpgcheck
+   10  mkdir java
+   11  cd java
+   12  nano HelloWorld.java
+   13  javac HelloWorld.java
+   14  javac HelloWorld.java
+   15  java HelloWorld
+   16  history > historico_de_comandos.txt
