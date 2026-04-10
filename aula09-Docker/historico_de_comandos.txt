@@ -1,0 +1,9 @@
+ 1  git config --global http.sslVerify false 
+    2  docker container run ubuntu
+    3  docker run
+    4  docker run
+    5  docker container run ubuntu
+    6  docker container run ubuntu
+    7  docker container run ubuntu:22.04
+    8  docker container run -t ubuntu
+    9  history
