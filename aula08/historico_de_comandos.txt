@@ -1,0 +1,19 @@
+ 1  ls -l
+    2  ls -la
+    3  ls
+    4  az --version [cite: 356]
+    5  az account list -o table
+    6  az account set --subscription "2TDSPG-2026-RM562290-LUNAGUIMARÃES"
+    7  az account show --query "{Sub:id, Nome:name}" -o jsonc
+    8  az account list-locations -o table
+    9  az account list-locations --query "[].name" -o tsv | sort
+   10  az group create --name rg-dimdim-dev --location eastus
+   11  az group show -nrg-dimdim-dev --query "{Name:name, Local:location, Tags:tags}"
+   12  az group delete -n rg-dimdim-dev --yes --no-wait
+   13  az vm image list --offer "server-focal" --publisher canonical --sku "20_04-lts" --all -o table
+   14  az vmimage list --all --output table
+   15  az vm image list --all --output table
+   16  az vmlist-sizes --location eastus-o table
+   17  az vm list-sizes --location eastus -o table
+   18  az vm list-skus --location eastus --resource-type virtualMachines --size "Standard_B" -o table
+   19  history
