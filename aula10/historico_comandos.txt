@@ -1,0 +1,28 @@
+docker pull centos
+docker pull centos:7
+docker image ls
+docker container run --name linux_mobile -it -e TZ=America/Sao_Paulo centos:7 /bin/bash
+docker container rm linux_mobile
+docker container run --name linux_mobile -it -e TZ=America/Sao_Paulo centos:7 /bin/bash
+docker container ls -a
+docker container run --name bd_portalweb -e MYSQL_ROOT_PASSWORD=@Fiap2tds2023 -d mysql/mysql-server:latest
+docker container ls
+docker container exec -it bd_portalweb bash
+docker volume ls
+docker volume create logdata
+docker container run -it --name apl_web_dimdim -v logdata:/volumedimdim alpine
+docker container rm -f bd_portalweb
+docker container run --name bd_portalweb -e MYSQL_ROOT_PASSWORD=@Fiap2tds2023 -e MYSQL_DATABASE=db_fiap -e MYSQL_USER=user_fiap -e MYSQL_PASSWORD=@Fiap2tds2023 -v db_data:/var/lib/mysql -v db_logs:/var/log/mysql -p 3306:3306 -d mysql/mysql-server:latest
+docker container start apl_web_dimdim
+docker container exec -it apl_web_dimdim sh
+sudo touch /var/lib/docker/volumes/logdata/_data/Dados_Financeiros.xlsx
+docker container inspect linux_mobile
+docker container stop apl_web_dimdim
+docker container start apl_web_dimdim
+docker container ls -a
+docker container rm linux_mobile
+docker container ls -a
+docker volume create nginx-data
+docker container run -d --name servidor_web -p 80:80 -v nginx-data:/usr/share/nginx/html nginx
+sudo sh -c 'echo "<h1>Desafio Nginx Concluido com Sucesso!</h1>" > /var/lib/docker/volumes/nginx-data/_data/index.html'
+curl http://localhost
