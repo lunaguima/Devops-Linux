@@ -1,0 +1,31 @@
+  1  sudo fallocate -l 2G /swapfile
+    2  sudo chmode 600 /swapfile
+    3  sudo chmod 600 /swapfile
+    4  sudo mkswap /swapfile
+    5  sudo swapon /swapfile
+    6  free -h
+    7  sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    8  sudo dnf install docker-ce docker-ce-cli containerd.io -y
+    9  sudo fallocate -l 2G /swapfile2
+   10  sudo chmod 600 /swapfile2
+   11  sudo mkswap /swapfile2
+   12  sudo swapon /swapfile2
+   13  free -h
+   14  sudo rm -f /var/lib/dnf/lock
+   15  sudo dnf clean all
+   16  sudo dnf install docker-ce docker-ce-cli containerd.io -y
+   17  sudo systemctl start docker
+   18  sudo systemctl enable docker
+   19  git clone https://github.com/profjoaomenk/mysql-dimdim.git
+   20  sudo dnf install git -y
+   21  git clone https://github.com/profjoaomenk/mysql-dimdim.git
+   22  cd mysql-dimdim
+   23  nano Dockerfile.mysql
+   24  sudo docker build -t mysql-dimdim -f Dockerfile.mysql .
+   25  ls~
+   26  ls
+   27  nano script.sql
+   28  sudo docker build -t mysql-dimdim -f Dockerfile.mysql .
+   29  sudo docker run -d --name container-mysql-dimdim -p 3306:3306 mysql-dimdim
+   30  sudo docker ps
+   31  history
